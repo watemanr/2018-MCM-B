@@ -3,7 +3,8 @@
 \usepackage{booktabs}%粗表格
 
 \usepackage{indentfirst}%首行缩进
-
+\usepackage{graphicx}%图片
+\usepackage{subfigure}
 
 \mcmsetup{tcn = 85691,problem = B,titlepage = false}
 \title{Use Diffusion Models to Solve the Problem of Language Communication}
@@ -68,6 +69,8 @@
     Of course, this area is also changing
     Then the person who uses the A language is a circle in the center of the plane.
     The area of this circle is the total number of people who use the A language (including the first language and the second language).
+    Refer to Picture 1.
+    %\ref{p1}
 
     The expansion of the total number of languages is the process of increasing color.
     In the model, it is the color slowly from the color circle into the plane of the blank, like ink dripping into water slowly spread the same.
@@ -81,6 +84,28 @@
     (Changes in the number of speakers in the first language are related to changes in the population that mainly use the language.)
     This diffusion process is governed by two factors: the circumference of the initial color circle and the rate of diffusion.
 
+    \begin{figure}[h]
+      \begin{minipage}[t]{0.5\linewidth}
+      \centering
+      \includegraphics[height=3.8cm,width=6cm]{p1.png}%height=2.4cm,width=3.8cm
+      \caption{Language Diffusion Model}
+      \label{p1}
+      \end{minipage}
+      \begin{minipage}[t]{0.5\linewidth}
+      \centering
+      \includegraphics[height=3.8cm,width=6.3cm]{p2.png}%width = .48\linewidth
+      \caption{Changing Way in Users}
+      \label{p2}
+      \end{minipage}
+    \end{figure}
+
+    %\begin{figure}
+      %\centering
+      %\includegraphics{p2.png}
+      %\caption{Changing Way in Users}
+      %\label{p2}
+    %\end{figure}
+
     The total number of language changes is divided into two parts, one is the number of changes in the first language, another is the number of changes in the second language.
     Whether it is studying immigrants, work or government incentives, are only increased the number of second languages.
     Therefore, the number of first languages is only related to the growth of the population of many countries that mainly use this language.
@@ -91,6 +116,7 @@
     We use the diffusion coefficient $D$ to quantify it.
     Furthermore, we analyze the GDP, linguistic systems and the impact of immigrants on the diffusion coefficient in the major countries that use languages.
     This represents the degree to which people in real life learn the language.
+    Refer to Picture 2.
 
     As the number of languages used is too large (hundred million),
     the effect of the number of people who grew over time on the radius of the circle is negligible.
@@ -102,7 +128,14 @@
     "Concentration Area" means that the coloring of this ring is not uniform.
     The actual area is not equivalent to the actual number.
     Take the proportion of people who use the A language per unit area as the concentration $C$.
+    Refer to Picture 3.
 
+    \begin{figure}[h]
+          \centering
+          \includegraphics{p3.png}
+          \caption{Approximate Replacement Process}
+          \label{p3}
+        \end{figure}
 
     Here we solve this situation.
     Fick's second law is a partial differential equation.
