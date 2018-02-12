@@ -10,7 +10,7 @@
 \title{Use Diffusion Models to Solve the Problem of Language Communication}
 \begin{document}
 
-\setlength{parindent}{2em}%设置段首行缩进2字符
+\setlength{2em}%设置段首行缩进2字符{parindent}
 
   \begin{abstract}
     This is an example of the ABSTRACT.
@@ -19,22 +19,24 @@
   \maketitle
   \tableofcontents
 
+  \clearpage%另起一页
   \section{Introduction}%引言
 
     \subsection{Terminology}%术语
 
     \begin{table}[h]
-    \centering
-    \caption{Notation}
+      \centering
+      \caption{Notation}
 
-    \begin{tabular}{cc}
-    \toprule
-    Symbol&Meaning\\
-    \midrule
-    {$C_1$}&ta\\
-    \bottomrule
-    \end{tabular}
-  \end{table}
+      \begin{tabular}{cc}
+        \toprule%line
+        Symbol&Meaning\\
+        \midrule%line
+        {$D$}&Diffusion Coefficient\\
+        \bottomrule%line
+      \end{tabular}
+    \end{table}
+
     \subsection{Assumptions}%假定
 
   \section{The Models}
@@ -94,7 +96,7 @@
       \begin{minipage}[t]{0.5\linewidth}
       \centering
       \includegraphics[height=3.8cm,width=6.3cm]{p2.png}%width = .48\linewidth
-      \caption{Changing Way in Users}
+      \caption{Changing Way in Speakers}
       \label{p2}
       \end{minipage}
     \end{figure}
@@ -102,7 +104,7 @@
     %\begin{figure}
       %\centering
       %\includegraphics{p2.png}
-      %\caption{Changing Way in Users}
+      %\caption{Changing Way in Speakers}
       %\label{p2}
     %\end{figure}
 
@@ -110,7 +112,7 @@
     Whether it is studying immigrants, work or government incentives, are only increased the number of second languages.
     Therefore, the number of first languages is only related to the growth of the population of many countries that mainly use this language.
     The growth of a second language is related to the overall influence of the language, including the number of people using the language and the objective factors.
-    Then the number of users, the larger the corresponding area, the greater the side length.
+    Then the number of speakers, the larger the corresponding area, the greater the side length.
     This indicator quantifies the crowd's influence.
     Objective factors determine the speed of diffusion.
     We use the diffusion coefficient $D$ to quantify it.
@@ -132,7 +134,7 @@
 
     \begin{figure}[h]
           \centering
-          \includegraphics{p3.png}
+          \includegraphics[height=6.3cm,width=10cm]{p3.png}
           \caption{Approximate Replacement Process}
           \label{p3}
         \end{figure}
@@ -170,14 +172,96 @@
     $k$ corresponding to the distance k0 obtained by the formula:$C_{(k_0,t)}=k$
     \\Then the final increment of the second language ($\Delta L_2$) is expressed as:
     Concentration Integral × Colored Circle Circumference
-    $$\Delta L_2=\int_0^{k_0} C_{(r,t)}{\rm d}r\times 2\pi\sqrt{\frac{T}{\pi}}=\int_0^{k_0}(1-erf(\frac{r}{2\sqrt{Dt}})){\rm d}r\times 2\pi\sqrt{\frac{T}{\pi}}$$
+    $$\Delta L_2=\int_0^{k_0} C_{(r,t)}{\rm d}r\times 2\pi\sqrt{\frac{Total}{\pi}}=\int_0^{k_0}(1-erf(\frac{r}{2\sqrt{Dt}})){\rm d}r\times 2\pi\sqrt{\frac{Total}{\pi}}$$
 
-
+    Furthermore, given a predictive time $t$ after determining $D$ based on objective factors,
+    we can make a numerical prediction of the growth of future second language populations.
+    Combined with the population growth trend of the first language of the number of predictions,
+    we can predict the future of a language of the total number of years.
+    $$Total'=L_1'+L_2+\Delta L_2$$
 
 
 
     \subsection{Design of Influential Factors}%语言传播的影响因素
     A large number of objective factors will affect the spread of language.
+
+    \subsection{Language Distribution in some Specific Areas}%特定区域的语言分布情况
+
+    \subsection{Model of Setting Up Office}%办事处的设立方法
+
+  \section{Models Calculation}%模型计算
+
+    \subsection{Calculate Diffusion Coefficient $D$ Based on Historical Data}%根据历史数据计算扩散系数
+    When $k$, $t$, $Total$ given, $\Delta L_2$ is only a function of $D$.
+    We can, in turn, find the diffusion coefficient $D$,
+    for a given time period in a given language based on $\Delta L_2$.
+    The calculation results are as follows:
+
+    \begin{table}[h]
+      \centering
+      \caption{Diffusion Coefficient}
+
+      \begin{tabular}{cccc}
+        \toprule%line
+        Language&$D_1$(2015~2017)&$D_2$(2013~2015)&$D_3$(2008~2013)\\
+        \midrule%line
+        Mandarin Chinese&0.003163&0.1582&--\\
+        English&0.02494&12.1727&13.6771\\
+        Hindustani (Hindi/Urdu)&1.2009&0.3726&0\\
+        Spanish&0.006543&0.7769&--\\
+        Arabic&1.6014&--&--\\
+        Russian&0&0&--\\
+        French&0.2827&14.1057&0\\
+        \bottomrule%line
+      \end{tabular}
+    \end{table}
+
+    \subsection{Prediction of Language Speakers after 50 Years}
+
+    \subsection{Calculation of Language Distribution in some Specific Areas}
+
+    \subparagraph{Approximate Optimal Solution of 6 Offices}%6个办事处的近似最优解
+
+    \subsection{Feasibility Study of Less Than 6 Offices}%少于6个办事处的可行性探究
+
+  \section{Sensitivity Analysis---A Case Study in English}
+
+    \subsection{Prediction of Influential Factors}
+
+      %\subsubsection{Population}
+
+      \subsubsection{GDP}
+
+      \subsubsection{Immigration}
+
+    %\subsection{Quantification of Diffusion Coefficient $D$}
+
+    \subsection{Iteration Result}%迭代结果
+
+  %\section{Sensitivity Analysis}
+
+    %\subsection{Influence of the Upper Limit Parameter $k$}
+    %When $k$ takes different values,
+    %we find that the effects of diffusion coefficients $D_1$ and $D_2$
+    %for the two time periods of 2013 ~ 2015 and 2015 ~ 2017 are as follows:
+
+    %We can easily see that the value of k does not affect the ratio between the two diffusion coefficients.
+    %$k$ does not affect the proportionality of $D$.
+    %We only need to find a suitable k so that the value of D is in the right range.
+
+
+    %\subsection{Number of Iterations}
+
+  \section{Conclusions}
+
+  \section{Strengths and Weaknesses}
+
+  \section*{Memo}
+  \addcontentsline{toc}{section}{Memo}
+
+
+
+
 
 
 
